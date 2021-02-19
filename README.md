@@ -10,7 +10,7 @@ Creating the manual bindings is really quite laborious.
 A [similar attempt](https://github.com/apahl/rdkit_nim) using the [Nim](https://nim-lang.org/) language was actually much less painful. 
 The major roadblock encountered so far was the inability to pass a C++ string to Rust.
 Because of the volatility of the C++ std::string, this was not even possible to do via a C string pointer (`c_str()`).
-The workaround was to allocate a temporary char buffer (of fixed size!) and copy the C++ string into it (see `Mol::to_smiles()`).
+The workaround was to allocate a temporary char buffer (of fixed size!) and copy the C++ string into it (see [`Mol::to_smiles()`](https://github.com/apahl/rdkit_rust/blob/9de90f2e2a545fbe22f424005e63d350530bbec3/src/romol.rs#L78)).
 
 ## Status
 
